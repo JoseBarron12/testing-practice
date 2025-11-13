@@ -1,4 +1,7 @@
-import { capitalize } from "./string.js";
+import { capitalize, reverseString} from "./string.js";
+
+/*
+* Test Suites for capitalize()
 
 test('non-string input cause TypeError', () => {
   expect(() => capitalize(2)).toThrow(TypeError);
@@ -23,5 +26,36 @@ test('non-letter first character string will remain the same', () => {
 test('non-letter first character string will remain the same with fully lowercase string', () => {
   expect(capitalize("36STRING")).toBe("36string");
 });
+*/
+
+/* 
+ * Test Suites for reverseString()
+*/
+test('non-string input cause TypeError', () => {
+  expect(() => reverseString(200)).toThrow(TypeError);
+});
+
+test('empty string will return itself', () => {
+  expect(reverseString("")).toBe("");
+});
+
+test('odd length string reversed', () => {
+  expect(reverseString("strings")).toBe("sgnirts");
+});
+
+test('even length string reversed', () => {
+  expect(reverseString("string")).toBe("gnirts");
+});
+
+test('original string remains unchanged only reversed positions', () => {
+  expect(reverseString("StRing76")).toBe("67gniRtS");
+});
+
+test('string of length one remains unchanged', () => {
+  expect(reverseString("S")).toBe("S");
+});
+
+
+
 
 
