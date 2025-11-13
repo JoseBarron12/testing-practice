@@ -1,5 +1,14 @@
 import { caeserCipher } from "./caesercipher";
 
+test('non-string input cause TypeError ', () => {
+  expect(() => caeserCipher(2,2)).toThrow(TypeError);
+});
+
+test('non-number input cause TypeError ', () => {
+  expect(() => caeserCipher("string","2")).toThrow(TypeError);
+});
+
+
 test('shift lowercase string', () => {
   expect(caeserCipher("abc", 3)).toBe("def");
 });

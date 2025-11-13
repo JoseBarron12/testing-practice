@@ -28,8 +28,9 @@ const getUpperCaseCharCode = (charCode, shiftfactor) => {
 
 
 export const caeserCipher = (string, shiftfactor) => {
+    if(typeof string != "string" || typeof shiftfactor != "number") throw new TypeError("Expected a string and a number");
+    
     let shiftedStr = "";
-
     for(let i = 0; i < string.length; i++)
     {
         let charCode = string.charCodeAt(i);
@@ -52,7 +53,5 @@ export const caeserCipher = (string, shiftfactor) => {
     }
     return shiftedStr
 }
-
-caeserCipher("abc", -3)
 
 
